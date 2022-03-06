@@ -1,0 +1,99 @@
+@import './reset';
+@import './config';
+@import './utilities';
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: $darker-color;
+    color: $light-color;
+    margin: 1rem 2rem;
+}
+a{
+    color: $light-color;
+    text-decoration: none;
+}
+img{
+    width: 100%;
+}
+
+.wrapper{
+    display: grid;
+    grid-gap: 2rem;
+}
+
+//navbar
+.navbar{
+    ul{
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(4,1fr);
+        li{
+            background-color: $primary-color;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.2s ease-in;
+            &:hover{
+                cursor: pointer;
+                background: lighten($color: $primary-color, $amount: 5);
+            }
+        }
+    }
+}
+
+//top container
+.top-container{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-areas:
+        'showcase showcase top-box-a'
+        'showcase showcase top-box-b';
+}
+.showcase{
+    grid-area: showcase;
+    min-height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/dist/img/student.jpg);
+    background-size: 150%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.top-box{
+    background: $dark-color;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.top-box-a{
+    grid-area: top-box-a;
+}
+.top-box-b{
+    grid-area: top-box-b;
+}
+
+//boxes
+.boxes{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    box{
+        background: $dark-color;
+        text-align: center;
+        padding: 1rem 2rem;
+    }
+}
+
+//portfolio
+.portfolio{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+
+
+@import './mobile';
